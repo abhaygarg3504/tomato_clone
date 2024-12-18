@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Food Item</title>
+</head>
+<body>
+    <h1>Delete Food Item</h1>
+    <form action="/api/food/remove" method="post">
+        <label for="id">Enter Food Item ID to Delete:</label>
+        <input type="text" id="id" name="id" required /><br/><br/>
+        <button type="submit">Delete Food</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <link rel="stylesheet" href="/styles.css"> <!-- Link to your CSS file if you have one -->
+</head>
+<body>
+  <div class="container">
+    <h2>Register</h2>
+    
+    <!-- Display any error or success messages -->
+    <% if (message) { %>
+      <div class="<%= message.success ? 'success' : 'error' %>">
+        <p><%= message.text %></p>
+      </div>
+    <% } %>
+
+    <form action="register" method="POST">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="phoneNumber">Phone Number</label>
+        <input type="tel" id="phoneNumber" name="phoneNumber" pattern="\d{10}" title="Enter a 10-digit phone number" required>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" minlength="8" required
+               title="Password must be at least 8 characters long and include a special character">
+      </div>
+
+      <button type="submit">Register</button>
+    </form>
+
+    <p>Already have an account? <a href="/login">Login here</a>.</p>
+  </div>
+</body>
+</html>
